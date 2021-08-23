@@ -26,6 +26,7 @@ def right(event):
     alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
     canvas.pack()
     print("right")
+    print(x,y)
 def left(event):
     global x,alala
     x -= 10
