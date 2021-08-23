@@ -1,6 +1,7 @@
 #Planet System made by Jason Mourier
 
 from tkinter import *
+from typing import get_origin
 
 window = Tk()
 window.title("PlanetSytem")
@@ -9,7 +10,10 @@ window.maxsize(1400, 700)
 
 canvas = Canvas(window, width=1400, height=700)
 
-
+left2 = ""
+right2 = ""
+up2 = ""
+down2 = ""
 
 x = 10
 y = 10
@@ -18,71 +22,67 @@ height= 10
 
 alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
 canvas.pack()
-left2 = True
-right2 = True
-up2 = True
-down2 = True
+
+
+
 def Run():
-    global left2, up2, down2, right2
-    window.after(100, Run)
-    print(right2)
+    
+    global left2, up2, down2, right2, x, alala, y
+    window.after(120, Run)
+
+    if x > 1390 or x < 0 or y > 690 or y < 0: 
+        window.destroy()
+
     if right2 == True:
-        global x,alala
         x+=10
-        print("Oui")
         canvas.delete(alala)
         alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
         canvas.pack()
+    if left2 == True:
+        x-=10
+        canvas.delete(alala)
+        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
+        canvas.pack()
+    if up2 == True: 
+        y-=10
+        canvas.delete(alala)
+        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
+        canvas.pack()
+    if down2 == True:
+        y+=10
+        canvas.delete(alala)
+        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
+        canvas.pack()
+
     def right(event):
         global left2, up2, down2, right2
         left2 = False
         up2 = False
         down2 = False
-
-        global x,alala
-        x += 10
-        canvas.delete(alala)
-        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
-        canvas.pack()
-        print("right")
-        if x > 1390 or x < 0 or y > 690 or y < 0:
-            window.destroy()
         right2 = True
-        
         
     def left(event):
         global left2, up2, down2, right2
         global x,alala
+        
         right2 = False
         up2 = False
         down2 = False
-        
-        x -= 10
-        canvas.delete(alala)
-        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
-        canvas.pack()
-        print("left")
-        if x > 1390 or x < 0 or y > 690 or y < 0:
-            window.destroy()
-        addcanvas()
+        left2 = True
+
     def up(event):
-        global y,alala
-        y -= 10
-        canvas.delete(alala)
-        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
-        canvas.pack()
-        print("up")
-        if x > 1390 or x < 0 or y > 690 or y < 0:
-            window.destroy()
+        global left2, up2, down2, right2
+        right2 = False
+        left2 = False
+        down2 = False
+        up2 = True
+
     def down(event):
-        global y,alala
-        y += 10
-        canvas.delete(alala)
-        alala = canvas.create_rectangle(x, y, x+width, y+height, fill='red')
-        canvas.pack()
-        print("down")
-        if x > 1390 or x < 0 or y > 690 or y < 0:
-            window.destroy()
+        global left2, up2, down2, right2
+        right2 = False
+        left2 = False
+        down2 = True
+        up2 = False
     def addcanvas():
         pass
 
