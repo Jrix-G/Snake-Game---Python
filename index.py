@@ -50,6 +50,9 @@ def Run():
     tb2.reverse()
     if x == xran and y == yran:
         canvas.delete(mange)
+
+        addcanvas()
+
         xran = randint(10, 500)
         yran = randint(10, 300)
         while xran%10 != 0:
@@ -62,10 +65,6 @@ def Run():
         x+=10
         canvas.delete(alala)
         alala = canvas.create_rectangle(x, y, x+width, y+height, fill='green')
-        canvas.pack()
-
-        canvas.delete(name12)
-        name12 = canvas.create_rectangle(tb2[1][0]+20, tb2[1][1], x+width, y+height, fill='green')
         canvas.pack()
     if left2 == True:
         x-=10
@@ -112,9 +111,11 @@ def Run():
         up2 = False
 
     def addcanvas():
-        global i, alala2
+        global i, alala2, name12
         i+=1
-
+        canvas.delete(name12)
+        name12 = canvas.create_rectangle(tb2[1][0], tb2[1][1], x+width, y+height, fill='green')
+        canvas.pack()
 
     window.bind("<Right>", right)
     window.bind("<Left>", left)
