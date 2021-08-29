@@ -1,4 +1,4 @@
-#Planet System made by Jason Mourier
+#EasySnake made by Jason Mourier
 
 from tkinter import *
 from random import *
@@ -47,6 +47,14 @@ def Run():
 
     if x > 1390 or x < 0 or y > 690 or y < 0: 
         window.destroy()
+
+    if len(tab) > 1:
+        for n in range(len(tab)):
+            print(n)
+            if tab[n] == tab[n-1]:
+                print(tab, n)
+                longueurserp = 1
+                
     impaire = 0
     longueurtableau = len(tb)-1
     for i in range(longueurserp):
