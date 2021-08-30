@@ -17,8 +17,6 @@ down2 = ""
 i = 0
 longueurserp = 1
 
-
-
 x = 10
 y = 10
 width = 10
@@ -37,24 +35,23 @@ mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
 
 tb = []
 def Run():
-    
     global left2, up2, down2, right2, x, alala, y, addcanvas, mange, name, tb, tb2, name12, xran, yran, longueurserp, tab, impaire
-    window.after(100, Run)
+    window.after(50, Run)
+
     tab = []
     tb += [[x, y]]
     tb2 = tb
     tb2.reverse()
 
     if x > 1390 or x < 0 or y > 690 or y < 0: 
-        window.destroy()
-
-    if len(tab) > 1:
-        for n in range(len(tab)):
-            print(n)
-            if tab[n] == tab[n-1]:
-                print(tab, n)
-                longueurserp = 1
-                
+        x = 20
+        y = 20
+        longueurserp = 1
+        left2 = False
+        up2 = False
+        down2 = False
+        right2 = True
+    
     impaire = 0
     longueurtableau = len(tb)-1
     for i in range(longueurserp):
@@ -65,10 +62,19 @@ def Run():
             if len(tb) > 2: 
                 tab += [tb[longueurtableau-impaire]]
                 impaire+=1
+    
+    if len(tab) > 1: #Vérificateur que le serpent ne se passe pas dessus ou se touche
+            for i in range(len(tab)):
+                m = 0
+                for n in range(len(tab)):
+                    if tab[i] == tab[n]:
+                        m += 1
+                        if m == 2:
+                            longueurserp = 1
+
 
     if x == xran and y == yran:
         canvas.delete(mange)
-
         addcanvas()
 
         xran = randint(10, 500)
@@ -146,6 +152,7 @@ def Run():
     window.bind("<Up>", up)
     window.bind("<Down>", down)
 
+    canvas.create_text([1200, 10], anchor=CENTER, text=longueurserp)
 window.after(1, Run)
 run = True
 window.mainloop()
