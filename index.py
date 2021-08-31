@@ -5,10 +5,10 @@ from random import *
 
 window = Tk()
 window.title("EasySnake")
-window.minsize(1400, 700)
-window.maxsize(1400, 700)
+window.minsize(700, 700)
+window.maxsize(700, 700)
 
-canvas = Canvas(window, width=1400, height=700)
+canvas = Canvas(window, width=700, height=700)
 
 left2 = ""
 right2 = True
@@ -25,12 +25,12 @@ height= 10
 tab = []
 name = canvas.create_rectangle(x, y, x+width, y+height, fill='')
 mange = False
-xran = randint(10, 500)
-yran = randint(10, 300)
+xran = randint(10, 600)
+yran = randint(10, 600)
 while xran%10 != 0:
-    xran = randint(10, 500)
+    xran = randint(10, 600)
 while yran%10 != 0:
-    yran = randint(10, 300)
+    yran = randint(10, 600)
 mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
 
 tb = []
@@ -43,7 +43,7 @@ def Run():
     tb2 = tb
     tb2.reverse()
 
-    if x > 1390 or x < 0 or y > 690 or y < 0: 
+    if x > 690 or x < 0 or y > 690 or y < 0: 
         x = 20
         y = 20
         longueurserp = 1
@@ -77,12 +77,12 @@ def Run():
         canvas.delete(mange)
         addcanvas()
 
-        xran = randint(10, 500)
-        yran = randint(10, 300)
+        xran = randint(10, 600)
+        yran = randint(10, 600)
         while xran%10 != 0:
-            xran = randint(10, 500)
+            xran = randint(10, 600)
         while yran%10 != 0:
-            yran = randint(10, 300)
+            yran = randint(10, 600)
         mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
 
     if right2 == True:
@@ -152,7 +152,7 @@ def Run():
     window.bind("<Up>", up)
     window.bind("<Down>", down)
 
-    canvas.create_text([1200, 10], anchor=CENTER, text=longueurserp)
+    canvas.create_text([500, 10], anchor=CENTER, text=longueurserp)
 window.after(1, Run)
 run = True
 window.mainloop()
