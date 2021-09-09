@@ -1,4 +1,4 @@
-#EasySnake made by Jason Mourier
+#EasySnake made by Jason
 
 from tkinter import *
 from random import *
