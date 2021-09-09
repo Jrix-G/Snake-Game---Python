@@ -1,2 +1,2 @@
 # EasySnake
-Planet System using Python
+***Simple snake game using Python***
