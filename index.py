@@ -1,5 +1,7 @@
 #EasySnake made by Jason - Jrix
 #@Jrix#8243, https://discord.gg/MyTjgVdbzg
+
+
 from tkinter import *
 from random import *
 
