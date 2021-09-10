@@ -1,3 +1,3 @@
 # EasySnake
 ***Simple snake game using Python***
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![Python snake](https://spng.pngfind.com/pngs/s/158-1587999_snake-png-image-arts-python-snake-drawing-transparent.png)
