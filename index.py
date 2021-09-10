@@ -1,5 +1,5 @@
-#EasySnake made by Jason Mourier
-
+#EasySnake made by Jason - Jrix
+#@Jrix#8243, https://discord.gg/MyTjgVdbzg
 from tkinter import *
 from random import *
 
@@ -10,18 +10,21 @@ window.maxsize(700, 700)
 
 canvas = Canvas(window, width=700, height=700)
 
-left2 = ""
+#Initialisation of the bases
+left2 = "" 
 right2 = True
 up2 = ""
 down2 = ""
 i = 0
 longueurserp = 1
 
+#Initialisation of the square
 x = 10
 y = 10
 width = 10
 height= 10
 
+#Creation of the eat-square
 tab = []
 name = canvas.create_rectangle(x, y, x+width, y+height, fill='')
 mange = False
@@ -34,8 +37,8 @@ while yran%10 != 0:
 mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
 
 tb = []
-def Run():
-    global left2, up2, down2, right2, x, alala, y, addcanvas, mange, name, tb, tb2, name12, xran, yran, longueurserp, tab, impaire
+def Run(): #Main Function
+    global left2, up2, down2, right2, x, y, addcanvas, mange, name, tb, tb2, name12, xran, yran, longueurserp, tab, impaire
     window.after(50, Run)
 
     tab = []
@@ -43,7 +46,7 @@ def Run():
     tb2 = tb
     tb2.reverse()
 
-    if x > 690 or x < 0 or y > 690 or y < 0: 
+    if x > 690 or x < 0 or y > 690 or y < 0: #Limits for the snake
         x = 20
         y = 20
         longueurserp = 1
@@ -63,7 +66,7 @@ def Run():
                 tab += [tb[longueurtableau-impaire]]
                 impaire+=1
     
-    if len(tab) > 1: #Vérificateur que le serpent ne se passe pas dessus ou se touche
+    if len(tab) > 1: #Check that the snake does not pass over or touch each other
             for i in range(len(tab)):
                 m = 0
                 for n in range(len(tab)):
@@ -73,7 +76,7 @@ def Run():
                             longueurserp = 1
 
 
-    if x == xran and y == yran:
+    if x == xran and y == yran: #Check if the snake ate the block
         canvas.delete(mange)
         addcanvas()
 
@@ -84,7 +87,8 @@ def Run():
         while yran%10 != 0:
             yran = randint(10, 600)
         mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
-
+    
+    #Movements
     if right2 == True:
         x+=10
         canvas.delete("all")
@@ -115,6 +119,7 @@ def Run():
             mange = canvas.create_rectangle(xran, yran, xran+width, yran+height, fill='red')
         canvas.pack()
 
+    #Functions movements
     def right(event):
         global left2, up2, down2, right2
         left2 = False
