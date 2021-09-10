@@ -1,3 +1,3 @@
 # EasySnake
 ***Simple snake game using Python***
-![Python snake](https://spng.pngfind.com/pngs/s/158-1587999_snake-png-image-arts-python-snake-drawing-transparent.png)
+![Python snake](https://www.vhv.rs/dpng/d/310-3102812_reptilia-mascot-sass-the-snake-python-hd-png.png)
