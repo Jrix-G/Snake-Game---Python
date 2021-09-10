@@ -1,3 +1,3 @@
 # EasySnake
 ***Simple snake game using Python***
-![Python snake](https://www.vhv.rs/dpng/d/310-3102812_reptilia-mascot-sass-the-snake-python-hd-png.png)
+![Python snake](https://i.pinimg.com/564x/fb/31/72/fb3172a25404f6b19fbe8a39a16adb9a--snake-facts-black-backgrounds.jpg)
