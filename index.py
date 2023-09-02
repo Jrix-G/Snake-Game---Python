@@ -1,6 +1,5 @@
-#EasySnake made by Jason - Jrix
+#EasySnake made by Jason
 #@Jrix#8243, https://discord.gg/MyTjgVdbzg
-
 
 from tkinter import *
 from random import *
@@ -77,11 +76,9 @@ def Run(): #Main Function
                         if m == 2:
                             longueurserp = 1
 
-
     if x == xran and y == yran: #Check if the snake ate the block
         canvas.delete(mange)
         addcanvas()
-
         xran = randint(10, 600)
         yran = randint(10, 600)
         while xran%10 != 0:
@@ -160,6 +157,7 @@ def Run(): #Main Function
     window.bind("<Down>", down)
 
     canvas.create_text([500, 10], anchor=CENTER, text=longueurserp)
+
 window.after(1, Run)
 run = True
 window.mainloop()
